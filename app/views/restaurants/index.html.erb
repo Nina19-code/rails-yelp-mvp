@@ -1,0 +1,26 @@
+<div class="container ml-5">
+  <h1 >Get an overview of all available restaurants</h1>
+  <div class="container">
+  <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Rating</th>
+          <th>colspan="2"</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @restaurants.each do |restaurant| %>
+          <tr>
+            <td><%= restaurant.name %></td>
+            <td><%= restaurant.address %></td>
+            <td><%= restaurant.category.capitalize %></td>
+            <td><%= link_to 'Show', restaurant %></td>
+            <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
